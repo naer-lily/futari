@@ -20,6 +20,8 @@ jobs:
         with:
           python-version: '3.11'
 
+      - uses: ilammy/msvc-dev-cmd@v1
+
       - run: npm ci
 
       - run: npm run package
