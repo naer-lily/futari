@@ -173,6 +173,11 @@ function createNoteWindow(note: StickyNoteData, startEdit = false): BrowserWindo
     }
   })
 
+  win.on('minimize', () => {
+    if (win.isDestroyed()) return
+    win.restore()
+  })
+
   win.on('closed', () => {
     windows.delete(note.id)
   })
